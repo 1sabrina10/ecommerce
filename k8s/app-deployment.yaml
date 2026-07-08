@@ -23,7 +23,7 @@ spec:
       containers:
         - name: ecommerce
 
-          image: 1sabrina10/ecommerce-api:v1.0.0
+          image: 1sabrina10/ecommerce-api:1ddfb2db021c300cb9878e57962a117e2c388ceb
 
           imagePullPolicy: Always
 
