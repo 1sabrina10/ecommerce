@@ -21,12 +21,11 @@ spec:
     spec:
 
       containers:
-
         - name: ecommerce
 
-          image: ecommerce:latest
+          image: 1sabrina10/ecommerce-api:latest
 
-          imagePullPolicy: Never
+          imagePullPolicy: Always
 
           ports:
 
