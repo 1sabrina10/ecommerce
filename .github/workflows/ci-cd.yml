@@ -78,3 +78,28 @@ jobs:
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/ecommerce-api:${{ github.sha }}
 
+  deploy:
+    name: Déploiement Kubernetes
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Installer kubectl
+        uses: azure/setup-kubectl@v4
+
+      - name: Configurer Kubernetes
+        run: |
+          mkdir -p ~/.kube
+          echo "${{ secrets.KUBE_CONFIG }}" > ~/.kube/config
+          chmod 600 ~/.kube/config
+
+      - name: Déployer nouvelle image
+        run: |
+          kubectl set image deployment/ecommerce \
+          ecommerce=${{ secrets.DOCKER_USERNAME }}/ecommerce-api:${{ github.sha }}
+
+          kubectl rollout status deployment ecommerce
+
