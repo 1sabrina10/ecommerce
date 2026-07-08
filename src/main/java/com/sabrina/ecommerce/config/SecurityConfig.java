@@ -48,6 +48,7 @@ public class SecurityConfig {
 
                         .requestMatchers("/api/auth/register-admin").hasRole("ADMIN")
                         .requestMatchers("/api/admin/**").hasRole("ADMIN")
+                        .requestMatchers("/actuator/**").permitAll()
 
                         .anyRequest().authenticated()
                 )
