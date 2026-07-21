@@ -187,16 +187,6 @@ Le déploiement sur Kubernetes est réalisé localement sur **Minikube** via le 
 
 ---
 
-## Perspectives d'amélioration
-
-- Ajout de tests d'intégration
-- Déploiement sur un cluster Kubernetes distant (AKS, GKE, EKS)
-- Mise en place d'un Ingress
-- Monitoring avec Prometheus et Grafana
-- Analyse de qualité du code avec SonarQube
-
----
-
 ## Auteur
 
 **Sabrina Moufok**
