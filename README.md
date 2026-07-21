@@ -58,7 +58,6 @@ src
 ├── security
 ├── config
 ├── exception
-└── util
 
 k8s
 ├── app-deployment.yaml
